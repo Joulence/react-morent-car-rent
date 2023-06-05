@@ -1,16 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Layout/Header";
 import Footer from "../components/Layout/Footer";
+import { Fragment } from "react";
 
 const RootLayout = () => {
   return (
-    <div className="container">
+    <Fragment>
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </Fragment>
   );
 };
 
