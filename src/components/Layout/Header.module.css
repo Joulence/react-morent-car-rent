@@ -60,10 +60,15 @@
   border-radius: 90px;
 }
 
-.header__buttons img {
+.header__buttons img,
+.header__buttons svg {
   left: 10px;
   position: absolute;
   width: 24px;
   height: 24px;
   top: 10px;
+}
+
+.header__buttons svg {
+  fill: #3d5278;
 }
