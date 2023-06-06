@@ -1,15 +1,32 @@
-import classes from "./Header.module.css";
+import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header className={classes.header}>
-      <div className={classes['header__menu']}>
-        <h2 className={classes['header__menu-logo']}>morent</h2>
-        <div className={classes['header__menu-search']}>
-            <input type="text" />
+    <header className={styles.header}>
+      <div className="container">
+        <div className={styles["header-wrapper"]}>
+          <div className={styles["header__menu"]}>
+            <Link to={"/"} className={styles["header__menu-logo"]}>
+              morent
+            </Link>
+            <div className={styles["header__menu-search"]}>
+              <input placeholder="Search something here" type="text" />
+            </div>
+          </div>
+          <div className={styles["header__buttons"]}>
+            <Link to={"favourites"}>
+              <img src="./images/fav.svg" alt="favourites" />
+            </Link>
+            <Link to={"notifications"}>
+              <img src="./images/notification.svg" alt="notifications" />
+            </Link>
+            <Link to={"settings"}>
+              <img src="./images/settings.svg" alt="settings" />
+            </Link>
+          </div>
         </div>
       </div>
-      <div className={classes['header__buttons']}>settings</div>
     </header>
   );
 };
