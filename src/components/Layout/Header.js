@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
+import Logo from "../Logo";
 
 const Header = () => {
   return (
@@ -7,9 +8,7 @@ const Header = () => {
       <div className="container">
         <div className={styles["header-wrapper"]}>
           <div className={styles["header__menu"]}>
-            <Link to={"/"} className={styles["header__menu-logo"]}>
-              morent
-            </Link>
+            <Logo />
             <div className={styles["header__menu-search"]}>
               <input placeholder="Search something here" type="text" />
             </div>
