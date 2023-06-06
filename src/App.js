@@ -6,6 +6,7 @@ import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 import { Suspense, lazy } from "react";
 
+const FavouritesPage = lazy(() => import("./pages/Favourites"));
 const SettingsPage = lazy(() => import("./pages/Settings"));
 const NotificationsPage = lazy(() => import("./pages/Notifications"));
 
@@ -18,6 +19,15 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "favourites",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <FavouritesPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Favourites"),
       },
       {
         path: "notifications",
