@@ -27,7 +27,7 @@
   border: 1px solid rgba(195, 212, 233, 0.4);
   border-radius: 70px;
   padding: 12px 0 12px 64px;
-  background-image: url("../../../public/images/search.svg");
+  background-image: url("../../assets/images/icons/search.svg");
   background-repeat: no-repeat;
   background-position: 20px 50%;
 }
