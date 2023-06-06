@@ -1,8 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/Home";
 import RootLayout from "./pages/Root";
-// import NotificationsPage from "./pages/Notifications";
-// import SettingsPage from "./pages/Settings";
 import ErrorPage from "./pages/Error";
 import { Suspense, lazy } from "react";
 
