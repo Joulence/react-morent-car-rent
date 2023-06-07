@@ -60,11 +60,11 @@ const CarCard = (props) => {
       <div className={styles["card__order"]}>
         <div className={styles["card__order-info"]}>
           <div className={styles["card__order-price"]}>
-            ${props.price} / <span>day</span>
+            ${props.price}.00 / <span>day</span>
           </div>
           {typeof props.discount === "number" && (
             <div className={styles["card__order-discount"]}>
-              ${props.discount}
+              ${props.discount}.00
             </div>
           )}
         </div>
