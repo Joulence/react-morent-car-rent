@@ -1,5 +1,6 @@
 import CarCard from "./UI/CarCard";
 import { useEffect, useState } from "react";
+import styles from "./HomeList.module.css";
 
 const HomeList = () => {
   const [cars, setCars] = useState([]);
@@ -60,7 +61,7 @@ const HomeList = () => {
   }
 
   return (
-    <div className="list">
+    <div className={styles.list}>
       {cars.map((car) => (
         <CarCard
           key={car.id}
