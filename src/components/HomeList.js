@@ -65,6 +65,7 @@ const HomeList = () => {
       {cars.map((car) => (
         <CarCard
           key={car.id}
+          id={car.id}
           name={car.name}
           type={car.type}
           img={car.link}
