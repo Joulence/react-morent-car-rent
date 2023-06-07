@@ -21,7 +21,7 @@
   max-width: 272px;
 }
 
-.banner div {
+.banner-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 160%;
@@ -43,7 +43,7 @@
   background: #1747d4;
 }
 
-.banner img {
+.banner-img {
   position: absolute;
   bottom: 10px;
 }
@@ -60,4 +60,43 @@
 
 .banner.dark a:hover {
   background: #2a96fb;
+}
+
+@media (max-width: 1440px) {
+  .banner {
+    max-width: 530px;
+  }
+
+  .banner-img {
+    right: 15%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .banner {
+    max-width: 90%;
+  }
+  .banner-img {
+    right: 5%;
+  }
+  .banner-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 826px) {
+  .banner {
+    height: 280px;
+  }
+  .banner h3,
+  .banner-text {
+    max-width: 100%;
+  }
+  .banner h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  .banner-text {
+    font-size: 12px;
+  }
 }

@@ -37,24 +37,26 @@ const CarCard = (props) => {
         <span className={styles["card__info-name"]}>{props.name}</span>
         <span className={styles["card__info-type"]}>{props.type}</span>
       </div>
-      <div className={styles["card-car"]}>
-        <img src={props.img} alt={props.name} />
-        <div></div>
-      </div>
-      <div className={styles["card__spec"]}>
-        <div>
-          <img src={gasImage} alt="gas" />
-          <span>{props.fuel}L</span>
+      <div className={styles["card-adapt"]}>
+        <div className={styles["card-car"]}>
+          <img src={props.img} alt={props.name} />
+          <div></div>
         </div>
-
-        <div>
-          <img src={carImage} alt="car" />
-          <span>{props.gear}</span>
-        </div>
-
-        <div>
-          <img src={peopleImage} alt="people" />
-          <span>{props.people}</span>
+        <div className={styles["card__spec"]}>
+          <div>
+            <img src={gasImage} alt="gas" />
+            <span>{props.fuel}L</span>
+          </div>
+        
+          <div>
+            <img src={carImage} alt="car" />
+            <span>{props.gear}</span>
+          </div>
+        
+          <div>
+            <img src={peopleImage} alt="people" />
+            <span>{props.people}</span>
+          </div>
         </div>
       </div>
       <div className={styles["card__order"]}>

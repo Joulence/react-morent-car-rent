@@ -1,7 +1,7 @@
 .list {
     margin-top: 27px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
     padding-bottom: 64px;

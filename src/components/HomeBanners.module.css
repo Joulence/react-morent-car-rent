@@ -1,6 +1,13 @@
 .banners {
-    padding: 36px 0 32px;
-    display: flex;
-    justify-content: space-between;
+  padding: 36px 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1280px) {
+  .banners {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
   }
-  
+}

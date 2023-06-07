@@ -4,7 +4,6 @@
   padding: 24px;
   position: relative;
   color: #90a3bf;
-  width: 100%;
   height: 388px;
   max-width: 254px;
   width: 100%;
@@ -114,10 +113,74 @@
   border-radius: 4px;
   font-weight: 600;
   font-size: 16px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: #ffffff;
 }
 
 .card-link:hover {
   background: #1747d4;
+}
+
+.card-adapt {
+  display: block;
+}
+
+@media (max-width: 666px) {
+  .card {
+    max-width: 100%;
+    height: 280px;
+    padding: 16px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card-adapt {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card__spec {
+    flex-direction: column;
+    margin-bottom: 0;
+    gap: 16px;
+  }
+
+  .card__spec div span {
+    font-size: 12px;
+  }
+  .card__spec div img {
+    width: 14px;
+  }
+
+  .card__info {
+    margin-bottom: 32px;
+  }
+
+  .card-car {
+    margin-bottom: 32px;
+  }
+
+  .card-car img {
+    width: 100%;
+  }
+
+  .card-car div {
+    bottom: -4px;
+  }
+
+  .card__order-price {
+    font-size: 16px;
+  }
+
+  .card__order-price span {
+    font-size: 12px;
+  }
+
+  .card-link {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
 }

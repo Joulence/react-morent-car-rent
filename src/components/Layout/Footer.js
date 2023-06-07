@@ -9,7 +9,7 @@ const Footer = () => {
         <div className={styles["footer-wrapper"]}>
           <div className={styles["footer__info"]}>
             <Logo />
-            <div>
+            <div className={styles["footer__info-text"]}>
               Our vision is to provide convenience and help increase your sales
               business.
             </div>

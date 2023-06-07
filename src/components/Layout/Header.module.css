@@ -72,3 +72,33 @@
 .header__buttons svg {
   fill: #3d5278;
 }
+
+@media (max-width: 1080px) {
+  .header__buttons a:not(:last-child) {
+    display: none;
+  }
+
+  .header-wrapper {
+    align-items: flex-start;
+  }
+  .header__menu {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .header__menu-search input {
+    width: 95%;
+  }
+
+  .header__menu-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .header__menu-search input {
+    width: 90%;
+  }
+}
