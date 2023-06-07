@@ -3,11 +3,12 @@ import HomePage from "./pages/Home";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 import { Suspense, lazy } from "react";
-import DetailsPage from "./pages/Details";
 
 const FavouritesPage = lazy(() => import("./pages/Favourites"));
 const SettingsPage = lazy(() => import("./pages/Settings"));
 const NotificationsPage = lazy(() => import("./pages/Notifications"));
+const DetailsPage = lazy(() => import("./pages/Details"));
+const LoginPage = lazy(() => import("./pages/Login"));
 
 const router = createBrowserRouter([
   {
@@ -52,9 +53,23 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <DetailsPage />,
+            element: (
+              <Suspense fallback={<p>Loading...</p>}>
+                <DetailsPage />
+              </Suspense>
+            ),
+            loader: () => import("./pages/Details"),
           },
         ],
+      },
+      {
+        path: "login",
+        element: (
+          <Suspense fallback={<p>Loading....</p>}>
+            <LoginPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Login"),
       },
     ],
   },
