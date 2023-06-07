@@ -1,8 +1,8 @@
+import { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/Home";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
-import { Suspense, lazy } from "react";
 
 const FavouritesPage = lazy(() => import("./pages/Favourites"));
 const SettingsPage = lazy(() => import("./pages/Settings"));
