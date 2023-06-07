@@ -12,6 +12,11 @@
   transition: all 0.25s ease-in-out;
 }
 
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1.035);
+}
+
 .button {
   position: absolute;
   background: transparent;
@@ -112,5 +117,10 @@
   border-radius: 4px;
   font-weight: 600;
   font-size: 16px;
+  transition: all .3s ease-in-out;
   color: #ffffff;
+}
+
+.card-link:hover {
+  background: #1747d4;
 }

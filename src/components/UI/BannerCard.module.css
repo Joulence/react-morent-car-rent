@@ -36,6 +36,11 @@
   gap: 8px;
   background: #3563e9;
   border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.banner a:hover {
+  background: #1747d4;
 }
 
 .banner img {
@@ -51,4 +56,8 @@
 
 .banner.dark a {
   background: #5caffc;
+}
+
+.banner.dark a:hover {
+  background: #2a96fb;
 }
