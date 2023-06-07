@@ -3,6 +3,7 @@ import HomePage from "./pages/Home";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 import { Suspense, lazy } from "react";
+import DetailsPage from "./pages/Details";
 
 const FavouritesPage = lazy(() => import("./pages/Favourites"));
 const SettingsPage = lazy(() => import("./pages/Settings"));
@@ -44,6 +45,16 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         loader: () => import("./pages/Settings"),
+      },
+      {
+        path: "cars/:carId",
+        id: "car-detail",
+        children: [
+          {
+            index: true,
+            element: <DetailsPage />,
+          },
+        ],
       },
     ],
   },
