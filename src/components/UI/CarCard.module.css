@@ -86,9 +86,6 @@
 .card__order {
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  bottom: 27px;
-  width: 254px;
 }
 
 .card__order-info {
