@@ -1,0 +1,109 @@
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  position: relative;
+  color: #90a3bf;
+  max-width: 256px;
+  width: 100%;
+}
+
+.button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  right: 26px;
+  top: 26px;
+  cursor: pointer;
+}
+
+.active {
+  fill: #ed3f3f;
+}
+
+.active path {
+  stroke: #ed3f3f;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 64px;
+}
+
+.card__info-name {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a202c;
+}
+
+.card__info-type {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.card-car {
+  position: relative;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.card-car div {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  width: 100%;
+  height: 68px;
+  position: absolute;
+  bottom: -27px;
+}
+
+.card__spec {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.card__spec div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card__spec div span {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.card__order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__order-info {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.card__order-price {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a202c;
+}
+
+.card__order-price span {
+  color: #90a3bf;
+  font-size: 14px;
+}
+
+.card__order-discount {
+  text-decoration-line: line-through;
+}
+
+.card-link {
+  padding: 10px 20px;
+  background: #3563e9;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+}
