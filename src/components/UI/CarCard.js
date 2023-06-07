@@ -10,6 +10,7 @@ const CarCard = (props) => {
 
   const buttonHandler = () => {
     setIsActive(!isActive);
+    console.log(props.id)
   };
 
   return (

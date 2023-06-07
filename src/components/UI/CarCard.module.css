@@ -4,8 +4,12 @@
   padding: 24px;
   position: relative;
   color: #90a3bf;
-  max-width: 256px;
   width: 100%;
+  height: 388px;
+  max-width: 254px;
+  width: 100%;
+  padding: 24px;
+  transition: all 0.25s ease-in-out;
 }
 
 .button {
@@ -77,6 +81,9 @@
 .card__order {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  bottom: 27px;
+  width: 250px;
 }
 
 .card__order-info {
