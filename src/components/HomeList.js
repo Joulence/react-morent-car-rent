@@ -1,48 +1,9 @@
 import CarCard from "./UI/CarCard";
-import { useEffect, useState } from "react";
 import styles from "./HomeList.module.css";
+import useFetch from "../hooks/use-fetch";
 
 const HomeList = () => {
-  const [cars, setCars] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [httpError, setHttpError] = useState(null);
-
-  useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        const response = await fetch(
-          "https://react-morent-car-rent-default-rtdb.firebaseio.com/cars.json"
-        );
-
-        if (!response.ok) {
-          throw new Error("Error occurred during fetching data");
-        }
-
-        const resData = await response.json();
-
-        const loadedCars = Object.keys(resData).map((key) => ({
-          id: key,
-          name: resData[key].name,
-          description: resData[key].desc,
-          link: resData[key].url,
-          fuel: resData[key].fuel,
-          people: resData[key].people,
-          discount: resData[key].discount,
-          type: resData[key].type,
-          gear: resData[key].gear,
-          price: resData[key].price,
-        }));
-
-        setCars(loadedCars);
-        setIsLoading(false);
-      } catch (error) {
-        setIsLoading(false);
-        setHttpError(error.message);
-      }
-    };
-
-    fetchCars();
-  }, [cars]);
+  const { data, isLoading, httpError } = useFetch();
 
   if (isLoading) {
     return (
@@ -62,7 +23,7 @@ const HomeList = () => {
 
   return (
     <div className={styles.list}>
-      {cars.map((car) => (
+      {data.map((car) => (
         <CarCard
           key={car.id}
           id={car.id}

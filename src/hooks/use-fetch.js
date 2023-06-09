@@ -1,0 +1,45 @@
+import { useEffect, useState } from "react";
+
+const useFetch = () => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://react-morent-car-rent-default-rtdb.firebaseio.com/cars.json"
+        );
+
+        if (!response.ok) {
+          throw new Error("Error occurred during fetching data");
+        }
+
+        const responseData = await response.json();
+
+        const loadedData = Object.keys(responseData).map((key) => ({
+          id: key,
+          name: responseData[key].name,
+          description: responseData[key].desc,
+          link: responseData[key].url,
+          fuel: responseData[key].fuel,
+          people: responseData[key].people,
+          discount: responseData[key].discount,
+          type: responseData[key].type,
+          gear: responseData[key].gear,
+          price: responseData[key].price,
+        }));
+        setData(loadedData);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        setHttpError(error.message);
+      }
+    };
+    fetchData();
+  }, [data]);
+  return { data, isLoading, httpError };
+};
+
+export default useFetch;
