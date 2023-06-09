@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import Logo from "../Logo";
@@ -8,21 +7,14 @@ import favouritesIcon from "../../assets/images/icons/fav.svg";
 import SearchBar from "../SearchBar";
 
 const Header = () => {
-  const [searchResult, setSearchResult] = useState("");
-
-  const handleSearch = (searchTerm) => {
-    setSearchResult(searchTerm);
-  };
-
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles["header-wrapper"]}>
           <div className={styles["header__menu"]}>
             <Logo />
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar />
           </div>
-          <div>{searchResult}</div>
           <div className={styles["header__buttons"]}>
             <Link to={"favourites"}>
               <img src={favouritesIcon} alt="favourites" />

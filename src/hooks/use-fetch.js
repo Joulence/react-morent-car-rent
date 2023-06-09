@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = () => {
+const useFetch = (view) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
@@ -18,18 +18,44 @@ const useFetch = () => {
 
         const responseData = await response.json();
 
-        const loadedData = Object.keys(responseData).map((key) => ({
-          id: key,
-          name: responseData[key].name,
-          description: responseData[key].desc,
-          link: responseData[key].url,
-          fuel: responseData[key].fuel,
-          people: responseData[key].people,
-          discount: responseData[key].discount,
-          type: responseData[key].type,
-          gear: responseData[key].gear,
-          price: responseData[key].price,
-        }));
+        let loadedData;
+
+        switch (view) {
+          case "search":
+            loadedData = Object.keys(responseData).map((key) => ({
+              id: key,
+              name: responseData[key].name,
+              price: responseData[key].price,
+            }));
+            break;
+          case "description":
+            loadedData = Object.keys(responseData).map((key) => ({
+              id: key,
+              name: responseData[key].name,
+              description: responseData[key].desc,
+              link: responseData[key].url,
+              fuel: responseData[key].fuel,
+              people: responseData[key].people,
+              discount: responseData[key].discount,
+              type: responseData[key].type,
+              gear: responseData[key].gear,
+              price: responseData[key].price,
+            }));
+            break;
+          default:
+            loadedData = Object.keys(responseData).map((key) => ({
+              id: key,
+              name: responseData[key].name,
+              link: responseData[key].url,
+              fuel: responseData[key].fuel,
+              people: responseData[key].people,
+              discount: responseData[key].discount,
+              type: responseData[key].type,
+              gear: responseData[key].gear,
+              price: responseData[key].price,
+            }));
+        }
+
         setData(loadedData);
         setIsLoading(false);
       } catch (error) {
@@ -38,7 +64,7 @@ const useFetch = () => {
       }
     };
     fetchData();
-  }, [data]);
+  }, [data, view]);
   return { data, isLoading, httpError };
 };
 
