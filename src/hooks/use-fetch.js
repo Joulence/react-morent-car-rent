@@ -19,9 +19,22 @@ const useFetch = (view, url) => {
         let loadedData = [];
 
         switch (view) {
+          case "home":
+            loadedData = Object.entries(responseData).map(([id, car]) => ({
+              id,
+              name: car.name,
+              link: car.url,
+              fuel: car.fuel,
+              people: car.people,
+              discount: car.discount,
+              type: car.type,
+              gear: car.gear,
+              price: car.price,
+            }));
+            break;
           case "search":
-            loadedData = Object.values(responseData).map((car) => ({
-              id: car.id,
+            loadedData = Object.entries(responseData).map(([id, car]) => ({
+              id,
               name: car.name,
               price: car.price,
             }));
@@ -30,8 +43,8 @@ const useFetch = (view, url) => {
             loadedData = responseData;
             break;
           default:
-            loadedData = Object.values(responseData).map((car) => ({
-              id: car.id,
+            loadedData = Object.entries(responseData).map(([id, car]) => ({
+              id,
               name: car.name,
               link: car.url,
               fuel: car.fuel,
