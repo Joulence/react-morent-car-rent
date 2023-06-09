@@ -1,54 +1,62 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import useFetch from "../hooks/use-fetch";
 import styles from "./SearchBar.module.css";
-import { Link } from "react-router-dom";
 
 const SearchBar = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [isInputFocused, setIsInputFocused] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const inputRef = useRef(null);
 
   const { data } = useFetch("search");
 
-  const filteredCars = data.filter((car) =>
-    car.name.trim().toLowerCase().includes(inputValue.toLowerCase())
-  );
-
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    setSearchTerm(event.target.value);
+    setIsMenuOpen(true);
   };
 
-  const handleInputFocus = () => {
-    setIsInputFocused(true);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setSearchTerm(""); 
   };
 
-  const handleInputBlur = () => {
-    setIsInputFocused(false);
+  const handleClickOutside = (event) => {
+    if (inputRef.current && !inputRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
   };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const filteredCars = data.filter((car) =>
+    car.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className={styles.search}>
       <input
-        placeholder="Search something here"
         type="text"
-        value={inputValue}
+        value={searchTerm}
         onChange={handleInputChange}
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
+        placeholder="Search for a car"
+        ref={inputRef}
       />
-      {isInputFocused && inputValue && filteredCars.length > 0 && (
-        <div className={styles["search-cars"]}>
-          <ul>
+
+      {isMenuOpen &&
+        filteredCars.length > 0 && (
+          <div className={styles["search-cars"]}>
             {filteredCars.map((car) => (
-              <Link key={car.id} to={`cars/${car.id}`}>
-                <li>
-                  <span>{car.name}</span>
-                  <span>{car.price}$</span>
-                </li>
+              <Link to={`/cars/${car.id}`} key={car.id} onClick={toggleMenu}>
+                {car.name}
               </Link>
             ))}
-          </ul>
-        </div>
-      )}
+          </div>
+        )}
     </div>
   );
 };
