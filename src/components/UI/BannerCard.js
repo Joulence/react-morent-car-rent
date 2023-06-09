@@ -8,7 +8,7 @@ const BannerCard = (props) => {
     <div className={theme}>
       <h3>{props.title}</h3>
       <div className={styles["banner-text"]}>{props.text}</div>
-      <Link to={props.link}>Rental car</Link>
+      {props.isLink && <Link to={props.link}>Rental car</Link>}
       <div className={styles["banner-img"]}>
         <img src={props.img} alt="banner-car" />
       </div>

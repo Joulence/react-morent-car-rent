@@ -10,6 +10,7 @@ const HomeBanners = () => {
         title="The Best Platform for Car Rental"
         text="Ease of doing a car rental safely and reliably. Of course at a low price."
         img={bannerCarFirst}
+        isLink={true}
         link="cars/car1"
       />
 
@@ -17,6 +18,7 @@ const HomeBanners = () => {
         title="Easy way to rent a car at a low price"
         text="Providing cheap car rental services and safe and comfortable facilities."
         img={bannerCarSecond}
+        isLink={true}
         link="cars/car2"
         dark={true}
       />
