@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (view) => {
+const useFetch = (view, url) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
@@ -8,9 +8,7 @@ const useFetch = (view) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://react-morent-car-rent-default-rtdb.firebaseio.com/cars.json"
-        );
+        const response = await fetch(url);
 
         if (!response.ok) {
           throw new Error("Error occurred during fetching data");
@@ -64,7 +62,7 @@ const useFetch = (view) => {
       }
     };
     fetchData();
-  }, [data, view]);
+  }, [url, view]);
   return { data, isLoading, httpError };
 };
 
