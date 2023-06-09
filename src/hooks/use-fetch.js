@@ -16,41 +16,30 @@ const useFetch = (view, url) => {
 
         const responseData = await response.json();
 
-        let loadedData;
+        let loadedData = [];
 
         switch (view) {
           case "search":
-            loadedData = Object.keys(responseData).map((key) => ({
-              id: key,
-              name: responseData[key].name,
-              price: responseData[key].price,
+            loadedData = Object.values(responseData).map((car) => ({
+              id: car.id,
+              name: car.name,
+              price: car.price,
             }));
             break;
           case "description":
-            loadedData = Object.keys(responseData).map((key) => ({
-              id: key,
-              name: responseData[key].name,
-              description: responseData[key].desc,
-              link: responseData[key].url,
-              fuel: responseData[key].fuel,
-              people: responseData[key].people,
-              discount: responseData[key].discount,
-              type: responseData[key].type,
-              gear: responseData[key].gear,
-              price: responseData[key].price,
-            }));
+            loadedData = responseData;
             break;
           default:
-            loadedData = Object.keys(responseData).map((key) => ({
-              id: key,
-              name: responseData[key].name,
-              link: responseData[key].url,
-              fuel: responseData[key].fuel,
-              people: responseData[key].people,
-              discount: responseData[key].discount,
-              type: responseData[key].type,
-              gear: responseData[key].gear,
-              price: responseData[key].price,
+            loadedData = Object.values(responseData).map((car) => ({
+              id: car.id,
+              name: car.name,
+              link: car.url,
+              fuel: car.fuel,
+              people: car.people,
+              discount: car.discount,
+              type: car.type,
+              gear: car.gear,
+              price: car.price,
             }));
         }
 
@@ -61,8 +50,10 @@ const useFetch = (view, url) => {
         setHttpError(error.message);
       }
     };
+
     fetchData();
   }, [url, view]);
+
   return { data, isLoading, httpError };
 };
 
