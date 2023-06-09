@@ -39,8 +39,8 @@ const SearchBar = () => {
         <div className={styles["search-cars"]}>
           <ul>
             {filteredCars.map((car) => (
-              <Link to={`cars/${car.id}`}>
-                <li key={car.id}>
+              <Link key={car.id} to={`cars/${car.id}`}>
+                <li>
                   <span>{car.name}</span>
                   <span>{car.price}$</span>
                 </li>
