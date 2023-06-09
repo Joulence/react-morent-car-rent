@@ -95,6 +95,7 @@ hr {
     gap: 32px;
     flex-direction: column-reverse;
     align-items: flex-start;
+    font-size: 12px;
   }
 
   .footer-credits__links {
