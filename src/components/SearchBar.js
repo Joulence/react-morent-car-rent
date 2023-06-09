@@ -1,18 +1,28 @@
 import { useState } from "react";
 import useFetch from "../hooks/use-fetch";
 import styles from "./SearchBar.module.css";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState("");
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   const { data } = useFetch("search");
 
   const filteredCars = data.filter((car) =>
-    car.name.toLowerCase().includes(inputValue.toLowerCase())
+    car.name.trim().toLowerCase().includes(inputValue.toLowerCase())
   );
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
+  };
+
+  const handleInputFocus = () => {
+    setIsInputFocused(true);
+  };
+
+  const handleInputBlur = () => {
+    setIsInputFocused(false);
   };
 
   return (
@@ -22,11 +32,23 @@ const SearchBar = () => {
         type="text"
         value={inputValue}
         onChange={handleInputChange}
+        onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
       />
-      <div>
-        {inputValue &&
-          filteredCars.map((car) => <div key={car.id}>{car.name}</div>)}
-      </div>
+      {isInputFocused && inputValue && filteredCars.length > 0 && (
+        <div className={styles["search-cars"]}>
+          <ul>
+            {filteredCars.map((car) => (
+              <Link to={`cars/${car.id}`}>
+                <li key={car.id}>
+                  <span>{car.name}</span>
+                  <span>{car.price}$</span>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
