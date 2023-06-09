@@ -3,7 +3,10 @@ import styles from "./HomeList.module.css";
 import useFetch from "../hooks/use-fetch";
 
 const HomeList = () => {
-  const { data, isLoading, httpError } = useFetch("", "https://react-morent-car-rent-default-rtdb.firebaseio.com/cars.json");
+  const { data, isLoading, httpError } = useFetch(
+    "home",
+    "https://react-morent-car-rent-default-rtdb.firebaseio.com/cars.json"
+  );
 
   if (isLoading) {
     return (
@@ -35,7 +38,7 @@ const HomeList = () => {
           people={car.people}
           price={car.price}
           discount={car.discount}
-          linkToCar={`cars/${car.id}`}
+          linkToCar={`/cars/${car.id}`}
         />
       ))}
     </div>
