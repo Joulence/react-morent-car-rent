@@ -3,7 +3,7 @@ import styles from "./HomeList.module.css";
 import useFetch from "../hooks/use-fetch";
 
 const HomeList = () => {
-  const { data, isLoading, httpError } = useFetch();
+  const { data, isLoading, httpError } = useFetch("", "https://react-morent-car-rent-default-rtdb.firebaseio.com/cars.json");
 
   if (isLoading) {
     return (

@@ -8,7 +8,10 @@ const SearchBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const inputRef = useRef(null);
 
-  const { data } = useFetch("search");
+  const { data } = useFetch(
+    "search",
+    "https://react-morent-car-rent-default-rtdb.firebaseio.com/cars.json"
+  );
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
@@ -17,7 +20,7 @@ const SearchBar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    setSearchTerm(""); 
+    setSearchTerm("");
   };
 
   const handleClickOutside = (event) => {
@@ -47,16 +50,16 @@ const SearchBar = () => {
         ref={inputRef}
       />
 
-      {isMenuOpen &&
-        filteredCars.length > 0 && (
-          <div className={styles["search-cars"]}>
-            {filteredCars.map((car) => (
-              <Link to={`/cars/${car.id}`} key={car.id} onClick={toggleMenu}>
-                {car.name}
-              </Link>
-            ))}
-          </div>
-        )}
+      {isMenuOpen && filteredCars.length > 0 && (
+        <div className={styles["search-cars"]}>
+          {filteredCars.map((car) => (
+            <Link to={`/cars/${car.id}`} key={car.id} onClick={toggleMenu}>
+              <span>{car.name}</span>
+              <span>{car.price}</span>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
