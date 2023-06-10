@@ -101,8 +101,8 @@ const Footer = () => {
             ©2022 MORENT. All rights reserved
           </div>
           <div className={styles["footer-credits__links"]}>
-            <Link to="#">Privacy & Policy</Link>
-            <Link to="#">Terms & Condition</Link>
+            <Link to="/policy">Privacy & Policy</Link>
+            <Link to="/terms">Terms & Condition</Link>
           </div>
         </div>
       </div>
