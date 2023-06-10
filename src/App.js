@@ -12,6 +12,7 @@ const LoginPage = lazy(() => import("./pages/Login"));
 const CheckoutPage = lazy(() => import("./pages/Checkout"));
 const HowWorksPage = lazy(() => import("./pages/HowWorks"));
 const FeaturedPage = lazy(() => import("./pages/Featured"));
+const PartnershipPage = lazy(() => import("./pages/Partnership"));
 
 const router = createBrowserRouter([
   {
@@ -100,6 +101,15 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         loader: () => import("./pages/Featured"),
+      },
+      {
+        path: "partnership",
+        element: (
+          <Suspense>
+            <PartnershipPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Partnership"),
       },
     ],
   },
