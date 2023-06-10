@@ -126,7 +126,7 @@ const router = createBrowserRouter([
         loader: () => import("./pages/Business"),
       },
       {
-        path: "event",
+        path: "events",
         element: (
           <Suspense>
             <EventPage />
