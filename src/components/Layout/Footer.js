@@ -56,16 +56,40 @@ const Footer = () => {
               <h3>about</h3>
               <ul>
                 <li>
-                  <Link to="#">Discord</Link>
+                  <a
+                    href="https://discord.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Discord
+                  </a>
                 </li>
                 <li>
-                  <Link to="#">Instagram</Link>
+                  <a
+                    href="https://www.instagram.com/juizzyboy/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Instagram
+                  </a>
                 </li>
                 <li>
-                  <Link to="#">Twitter</Link>
+                  <a
+                    href="https://twitter.com/?lang=uk"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Twitter
+                  </a>
                 </li>
                 <li>
-                  <Link to="#">Facebook</Link>
+                  <a
+                    href="https://uk-ua.facebook.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Facebook
+                  </a>
                 </li>
               </ul>
             </div>
