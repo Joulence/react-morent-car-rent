@@ -10,6 +10,7 @@ const NotificationsPage = lazy(() => import("./pages/Notifications"));
 const DetailsPage = lazy(() => import("./pages/Details"));
 const LoginPage = lazy(() => import("./pages/Login"));
 const CheckoutPage = lazy(() => import("./pages/Checkout"));
+const HowWorksPage = lazy(() => import("./pages/HowWorks"));
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,15 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         loader: () => import("./pages/Checkout"),
+      },
+      {
+        path: "how-it-works",
+        element: (
+          <Suspense>
+            <HowWorksPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/HowWorks"),
       },
     ],
   },
