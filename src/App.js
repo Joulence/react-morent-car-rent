@@ -13,6 +13,11 @@ const CheckoutPage = lazy(() => import("./pages/Checkout"));
 const HowWorksPage = lazy(() => import("./pages/HowWorks"));
 const FeaturedPage = lazy(() => import("./pages/Featured"));
 const PartnershipPage = lazy(() => import("./pages/Partnership"));
+const BusinessPage = lazy(() => import("./pages/Business"));
+const EventPage = lazy(() => import("./pages/Event"));
+const BlogPage = lazy(() => import("./pages/Blog"));
+const PodcastPage = lazy(() => import("./pages/Podcast"));
+const InvitePage = lazy(() => import("./pages/Invite"));
 
 const router = createBrowserRouter([
   {
@@ -110,6 +115,51 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         loader: () => import("./pages/Partnership"),
+      },
+      {
+        path: "business",
+        element: (
+          <Suspense>
+            <BusinessPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Business"),
+      },
+      {
+        path: "event",
+        element: (
+          <Suspense>
+            <EventPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Event"),
+      },
+      {
+        path: "blog",
+        element: (
+          <Suspense>
+            <BlogPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Blog"),
+      },
+      {
+        path: "podcast",
+        element: (
+          <Suspense>
+            <PodcastPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Podcast"),
+      },
+      {
+        path: "invite",
+        element: (
+          <Suspense>
+            <InvitePage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Invite"),
       },
     ],
   },
