@@ -1,0 +1,96 @@
+.details {
+  padding: 32px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details__info {
+  max-width: 492px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.details__info h3 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+
+.details__info-reviews {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: #3d5278;
+  margin-bottom: 32px;
+}
+
+.details__info-description {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: #3d5278;
+  max-width: 444px;
+  margin-bottom: 32px;
+}
+
+.details-spec {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+
+.details-spec div {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: #90a3bf;
+  display: flex;
+  gap: 40px;
+}
+
+.details-spec__info {
+  font-weight: 600;
+  color: #3d5278;
+}
+
+.details__order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details__order-info {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.details__order-price {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a202c;
+}
+
+.details__order-price span {
+  color: #90a3bf;
+  font-size: 14px;
+}
+
+.details__order-discount {
+  text-decoration-line: line-through;
+  color: #90a3bf;
+}
+
+.details-link {
+  padding: 15px 20px;
+  background: #3563e9;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  color: #ffffff;
+}
+
+.details-link:hover {
+  background: #1747d4;
+}

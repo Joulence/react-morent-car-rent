@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/use-fetch";
-// import styles from "./Details.module.css";
+import CarDetail from "../components/CarDetail";
 
 const DetailsPage = () => {
   const params = useParams();
@@ -25,10 +25,23 @@ const DetailsPage = () => {
     );
   }
 
-  const { name, description, price, link, fuel, people, discount, type, gear } =
-    data;
+  const { name, desc, price, url, fuel, people, discount, type, gear } = data;
 
-  return <div className="container">{name}</div>;
+  return (
+    <div className="container">
+      <CarDetail
+        name={name}
+        desc={desc}
+        type={type}
+        people={people}
+        gear={gear}
+        fuel={fuel}
+        price={price}
+        discount={discount}
+        url={url}
+      />
+    </div>
+  );
 };
 
 export default DetailsPage;
