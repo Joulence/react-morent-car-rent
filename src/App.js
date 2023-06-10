@@ -9,6 +9,7 @@ const SettingsPage = lazy(() => import("./pages/Settings"));
 const NotificationsPage = lazy(() => import("./pages/Notifications"));
 const DetailsPage = lazy(() => import("./pages/Details"));
 const LoginPage = lazy(() => import("./pages/Login"));
+const CheckoutPage = lazy(() => import("./pages/Checkout"));
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,15 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         loader: () => import("./pages/Login"),
+      },
+      {
+        path: "checkout",
+        element: (
+          <Suspense>
+            <CheckoutPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Checkout"),
       },
     ],
   },
