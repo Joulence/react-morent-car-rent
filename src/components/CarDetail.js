@@ -5,13 +5,15 @@ import BannerCard from "./UI/BannerCard";
 const CarDetail = (props) => {
   return (
     <div className={styles.details}>
-      <BannerCard
-        title="Car with the best design and acceleration"
-        text="Safety and comfort while driving a 
-        futuristic and elegant sports car"
-        img={props.url}
-        isLink={false}
-      />
+      <div className={styles["details__banner"]}>
+        <h3>Car with the best design and acceleration</h3>
+        <div className={styles["details__banner-text"]}>
+          Safety and comfort while driving a futuristic and elegant sports car
+        </div>
+        <div className={styles["details__banner-img"]}>
+          <img src={props.url} alt={props.name} />
+        </div>
+      </div>
       <div className={styles["details__info"]}>
         <h3>{props.name}</h3>
         <div className={styles["details__info-reviews"]}>
