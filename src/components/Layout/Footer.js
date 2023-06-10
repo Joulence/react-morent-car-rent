@@ -20,16 +20,16 @@ const Footer = () => {
               <h3>about</h3>
               <ul>
                 <li>
-                  <Link to="#">How it works</Link>
+                  <Link to="/how-it-works">How it works</Link>
                 </li>
                 <li>
-                  <Link to="#">Featured</Link>
+                  <Link to="/featured">Featured</Link>
                 </li>
                 <li>
-                  <Link to="#">Partnership</Link>
+                  <Link to="/featured">Partnership</Link>
                 </li>
                 <li>
-                  <Link to="#">Bussines Relation</Link>
+                  <Link to="/business">Bussines Relation</Link>
                 </li>
               </ul>
             </div>
@@ -38,16 +38,16 @@ const Footer = () => {
               <h3>Community</h3>
               <ul>
                 <li>
-                  <Link to="#">Events</Link>
+                  <Link to="/events">Events</Link>
                 </li>
                 <li>
-                  <Link to="#">Blog</Link>
+                  <Link to="/blog">Blog</Link>
                 </li>
                 <li>
-                  <Link to="#">Podcast</Link>
+                  <Link to="/podcast">Podcast</Link>
                 </li>
                 <li>
-                  <Link to="#">Invite a friend</Link>
+                  <Link to="/invite">Invite a friend</Link>
                 </li>
               </ul>
             </div>
