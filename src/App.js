@@ -18,6 +18,8 @@ const EventPage = lazy(() => import("./pages/Event"));
 const BlogPage = lazy(() => import("./pages/Blog"));
 const PodcastPage = lazy(() => import("./pages/Podcast"));
 const InvitePage = lazy(() => import("./pages/Invite"));
+const PolicyPage = lazy(() => import("./pages/Policy"));
+const TermsPage = lazy(() => import("./pages/Terms"));
 
 const router = createBrowserRouter([
   {
@@ -83,7 +85,7 @@ const router = createBrowserRouter([
       {
         path: "checkout",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <CheckoutPage />
           </Suspense>
         ),
@@ -92,7 +94,7 @@ const router = createBrowserRouter([
       {
         path: "how-it-works",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <HowWorksPage />
           </Suspense>
         ),
@@ -101,7 +103,7 @@ const router = createBrowserRouter([
       {
         path: "featured",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <FeaturedPage />
           </Suspense>
         ),
@@ -110,7 +112,7 @@ const router = createBrowserRouter([
       {
         path: "partnership",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <PartnershipPage />
           </Suspense>
         ),
@@ -119,7 +121,7 @@ const router = createBrowserRouter([
       {
         path: "business",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <BusinessPage />
           </Suspense>
         ),
@@ -128,7 +130,7 @@ const router = createBrowserRouter([
       {
         path: "events",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <EventPage />
           </Suspense>
         ),
@@ -137,7 +139,7 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <BlogPage />
           </Suspense>
         ),
@@ -146,7 +148,7 @@ const router = createBrowserRouter([
       {
         path: "podcast",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <PodcastPage />
           </Suspense>
         ),
@@ -155,11 +157,29 @@ const router = createBrowserRouter([
       {
         path: "invite",
         element: (
-          <Suspense>
+          <Suspense fallback={<p>Loading....</p>}>
             <InvitePage />
           </Suspense>
         ),
         loader: () => import("./pages/Invite"),
+      },
+      {
+        path: "policy",
+        element: (
+          <Suspense fallback={<p>Loading....</p>}>
+            <PolicyPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Policy"),
+      },
+      {
+        path: "terms",
+        element: (
+          <Suspense fallback={<p>Loading....</p>}>
+            <TermsPage />
+          </Suspense>
+        ),
+        loader: () => import("./pages/Terms"),
       },
     ],
   },
