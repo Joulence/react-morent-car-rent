@@ -2,6 +2,48 @@
   padding: 32px 0;
   display: flex;
   justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.details__banner {
+  max-width: 492px;
+  width: 100%;
+  color: #ffffff;
+  background: #3563e9;
+  background-image: url("../assets/images/banners/banner_bg2.png");
+  border-radius: 10px;
+  position: relative;
+  padding: 24px 0 0 24px;
+  background-position: left bottom;
+}
+
+.details__banner h3 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  max-width: 272px;
+}
+
+.details__banner-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+  max-width: 284px;
+}
+
+.details__banner-img {
+  position: absolute;
+  bottom: 10px;
+  right: 35%;
+}
+
+.details__banner-img img {
+  width: 150%;
 }
 
 .details__info {
@@ -58,6 +100,7 @@
 .details__order {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .details__order-info {
@@ -93,4 +136,72 @@
 
 .details-link:hover {
   background: #1747d4;
+}
+
+@media (max-width: 1095px) {
+  .details__banner {
+    max-width: 100%;
+    height: 232px;
+  }
+
+  .details__info {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .details__info-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .details__banner h3 {
+    font-size: 16px;
+  }
+
+  .details__banner-text {
+    font-size: 12px;
+  }
+
+  .details__banner-img img {
+    width: 100%;
+  }
+
+  .details__info h3 {
+    font-size: 20px;
+  }
+
+  .details__info-reviews {
+    font-size: 12px;
+  }
+
+  .details__info-description {
+    font-size: 12px;
+  }
+
+  .details-spec div {
+    font-size: 12px;
+    gap: 20px;
+  }
+
+  .details__order-price {
+    font-weight: 700;
+    font-size: 20px;
+    color: #1a202c;
+  }
+
+  .details__order-price span {
+    color: #90a3bf;
+    font-size: 12px;
+  }
+
+  .details__order-discount {
+    font-size: 12px;
+    text-decoration-line: line-through;
+    color: #90a3bf;
+  }
+
+  .details-link {
+    padding: 10px 20px;
+  }
 }
