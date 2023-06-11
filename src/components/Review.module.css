@@ -1,0 +1,12 @@
+.details__info-reviews {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: #3d5278;
+  margin-bottom: 32px;
+}
+
+.details__info-reviews.block {
+  margin-bottom: 0;
+  line-height: 20px;
+}

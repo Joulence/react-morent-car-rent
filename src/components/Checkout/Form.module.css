@@ -1,0 +1,186 @@
+.form {
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.input {
+  width: 386px;
+}
+
+.input label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a202c;
+  text-transform: capitalize;
+}
+
+.input input,
+.input select {
+  width: 92%;
+  background: #f6f7f9;
+  border-radius: 10px;
+  border: #f6f7f9;
+  outline: none;
+  padding: 16px 10px 16px 32px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.input input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: #90a3bf;
+}
+
+.input select {
+  color: #90a3bf;
+  font-weight: 400;
+  width: 100%;
+}
+
+.input option {
+  color: #1a202c;
+}
+
+.additional {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a202c;
+  margin-bottom: 24px;
+}
+
+.additional-second {
+  margin-top: 32px;
+}
+
+.pay {
+  background: #f6f7f9;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.pay__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pay__title-svg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pay-input input {
+  background: #ffffff;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  background: #f6f7f9;
+  border-radius: 10px;
+  padding: 16px;
+  width: 100%;
+  gap: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1f2544;
+}
+
+.check a {
+  color: #1f2544;
+  text-decoration: underline;
+}
+
+.submit {
+  padding: 15px 20px;
+  background: #3563e9;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  margin: 32px 0;
+}
+
+.confirm__info-title {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a202c;
+  margin: 16px 0 8px;
+}
+
+.confirm__info-subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  color: #90a3bf;
+}
+
+@media (max-width: 1440px) {
+  .form {
+    flex-direction: column-reverse;
+    gap: 32px;
+    align-items: center;
+    padding-bottom: 24px;
+  }
+
+  .menu {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 940px) {
+  .input {
+    width: 90%;
+  }
+
+  .input select {
+    width: 98%;
+  }
+}
+
+@media (max-width: 666px) {
+  .input label {
+    font-size: 14px;
+  }
+
+  .input input,
+  .input select {
+    font-size: 12px;
+  }
+
+  .input input::placeholder {
+    font-size: 12px;
+  }
+
+  .check {
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .submit {
+    padding: 10px 20px;
+  }
+
+  .confirm__info-title {
+    font-size: 16px;
+  }
+
+  .confirm__info-subtitle {
+    font-size: 12px;
+  }
+}

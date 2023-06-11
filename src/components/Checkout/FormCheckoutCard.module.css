@@ -1,0 +1,145 @@
+.form__card {
+  max-width: 444px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.form__card h2 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a202c;
+  margin-bottom: 10px;
+}
+
+.form__card h3 {
+  font-weight: 500;
+  font-size: 14px;
+  color: #90a3bf;
+}
+
+.form__card-car {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form__card-img {
+  background: url("../../assets/images/banners/banner_bg2.png");
+  max-width: 116px;
+  width: 100%;
+  height: 80px;
+  color: #ffffff;
+  background-color: #3563e9;
+  border-radius: 10px;
+  position: relative;
+  padding: 24px 0 0 24px;
+  background-size: contain;
+}
+
+.form__card-img img {
+  width: 90%;
+  position: absolute;
+  right: 5%;
+}
+
+.form-car__name {
+  font-weight: 700;
+  font-size: 32px;
+  color: #1a202c;
+  margin-bottom: 12px;
+}
+
+.form__card-price {
+  font-weight: 600;
+  font-size: 16px;
+  color: #90a3bf;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form__card-price div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-price__focus {
+  color: #1a202c;
+}
+
+.form__card-total {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-total__title {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a202c;
+  margin-bottom: 4px;
+}
+
+.form-total__subtitle {
+  font-weight: 500;
+  font-size: 14px;
+  color: #90a3bf;
+}
+
+.form-total__price {
+  font-weight: 700;
+  font-size: 32px;
+  color: #1a202c;
+}
+
+@media (max-width: 1440px) {
+  .form__card {
+    max-width: 100%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 666px) {
+  .form__card {
+    padding: 16px;
+  }
+
+  .form__card h2 {
+    font-size: 16px;
+  }
+
+  .form__card h3 {
+    font-size: 12px;
+  }
+
+  .form__card-car {
+    justify-content: space-between;
+  }
+
+  .form-car__name {
+    font-size: 20px;
+  }
+
+  .form__card-price div span {
+    font-size: 12px;
+  }
+
+  .form-price__focus {
+    font-size: 16px !important;
+  }
+
+  .form-total__title {
+    font-size: 16px;
+  }
+
+  .form-total__subtitle {
+    font-size: 12px;
+  }
+
+  .form-total__price {
+    font-size: 20px;
+  }
+}
