@@ -1,5 +1,11 @@
+import Form from "../components/Form";
+
 const CheckoutPage = () => {
-  return <h1>Checkout page!</h1>;
+  return (
+    <div className="container">
+      <Form />
+    </div>
+  );
 };
 
 export default CheckoutPage;
