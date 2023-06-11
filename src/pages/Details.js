@@ -4,9 +4,10 @@ import CarDetail from "../components/CarDetail";
 
 const DetailsPage = () => {
   const params = useParams();
+  const id = params.carId;
   const { data, isLoading, httpError } = useFetch(
     "description",
-    `https://react-morent-car-rent-default-rtdb.firebaseio.com/cars/${params.carId}.json`
+    `https://react-morent-car-rent-default-rtdb.firebaseio.com/cars/${id}.json`
   );
 
   if (isLoading) {
@@ -30,6 +31,7 @@ const DetailsPage = () => {
   return (
     <div className="container">
       <CarDetail
+        id={id}
         name={name}
         desc={desc}
         type={type}
