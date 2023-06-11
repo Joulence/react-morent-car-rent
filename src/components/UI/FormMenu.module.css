@@ -1,0 +1,28 @@
+.menu {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 852px;
+  margin-bottom: 32px
+}
+
+.menu__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-weight: 500;
+  font-size: 14px;
+  color: #90a3bf;
+  margin-bottom: 32px;
+}
+
+.menu__info-title h2 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a202c;
+  margin-bottom: 4px;
+}
+.menu__info-title h3 {
+  font-weight: 500;
+  font-size: 14px;
+}
