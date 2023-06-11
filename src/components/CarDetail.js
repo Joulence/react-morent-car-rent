@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styles from "./CarDetail.module.css";
-import BannerCard from "./UI/BannerCard";
 
 const CarDetail = (props) => {
   return (
@@ -141,7 +140,7 @@ const CarDetail = (props) => {
               </div>
             )}
           </div>
-          <Link to={"/checkout"} className={styles["details-link"]}>
+          <Link to={`/checkout/${props.id}`} className={styles["details-link"]}>
             Rent Now
           </Link>
         </div>
