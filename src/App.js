@@ -74,6 +74,21 @@ const router = createBrowserRouter([
         ],
       },
       {
+        path: "checkout/:carId",
+        id: "checkout-detail",
+        children: [
+          {
+            index: true,
+            element: (
+              <Suspense fallback={<p>Loading....</p>}>
+                <CheckoutPage />
+              </Suspense>
+            ),
+            loader: () => import("./pages/Checkout"),
+          },
+        ],
+      },
+      {
         path: "login",
         element: (
           <Suspense fallback={<p>Loading....</p>}>
@@ -81,15 +96,6 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         loader: () => import("./pages/Login"),
-      },
-      {
-        path: "checkout",
-        element: (
-          <Suspense fallback={<p>Loading....</p>}>
-            <CheckoutPage />
-          </Suspense>
-        ),
-        loader: () => import("./pages/Checkout"),
       },
       {
         path: "how-it-works",
