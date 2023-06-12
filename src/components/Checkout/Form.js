@@ -1,5 +1,5 @@
 import styles from "./Form.module.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../hooks/use-fetch";
 import FormCheckoutCard from "./FormCheckoutCard";
 import BillingInfo from "./BillingInfo";
@@ -16,9 +16,15 @@ const Form = () => {
   );
 
   const { name, url, price } = data;
+  const navigate = useNavigate();
+
+  const submitHandler = () => {
+    alert("FORM WAS SUBMITTED!");
+    navigate("/");
+  };
 
   return (
-    <form className={styles.form}>
+    <form onSubmit={submitHandler} className={styles.form}>
       <div className={styles["form-menu"]}>
         <BillingInfo />
 
