@@ -12,7 +12,7 @@ const CarCard = (props) => {
   useEffect(() => {
     const isFavorite = getFav(props.id);
     setIsActive(!!isFavorite);
-  }, [props.id, isActive]);
+  }, [props.id]);
 
   const buttonHandler = () => {
     if (isActive) {
