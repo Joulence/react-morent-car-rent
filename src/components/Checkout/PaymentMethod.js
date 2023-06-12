@@ -51,7 +51,7 @@ const PaymentMethod = () => {
         <div className={styles.menu}>
           <div className={`${styles.input} ${styles["pay-input"]}`}>
             <label>Card Number</label>
-            <input placeholder="Card Number" type="text" required />
+            <input placeholder="Card Number" type="number" required />
           </div>
           <div className={`${styles.input} ${styles["pay-input"]}`}>
             <label>Expration Date</label>
@@ -72,7 +72,7 @@ const PaymentMethod = () => {
             <label>CVC</label>
             <input
               placeholder="CVC"
-              type="text"
+              type="number"
               value={cvc}
               onChange={handleCvcChange}
               required
