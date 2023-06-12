@@ -47,6 +47,7 @@ const FavouritesList = () => {
             price={car.price}
             discount={car.discount}
             linkToCar={`/cars/${car.id}`}
+            fav={true}
           />
         ) : null
       )}
