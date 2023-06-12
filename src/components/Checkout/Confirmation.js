@@ -2,13 +2,9 @@ import FormMenu from "../UI/FormMenu";
 import styles from "./Form.module.css";
 
 import securedImage from "../../assets/images/secure.svg";
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Confirmation = () => {
-  const btnHandler = () => {
-    alert("ORDER WAS SUBMITTED!");
-    redirect("/");
-  };
   return (
     <FormMenu
       title="Confirmation"
@@ -32,7 +28,7 @@ const Confirmation = () => {
         </div>
       </div>
 
-      <button onClick={btnHandler} className={styles.submit}>
+      <button type="submit" className={styles.submit}>
         Rent Now
       </button>
       <div className={styles["confirm__info"]}>
