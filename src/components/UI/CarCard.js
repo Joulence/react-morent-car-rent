@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./CarCard.module.css";
 import gasImage from "../../assets/images/icons/gas.svg";
 import carImage from "../../assets/images/icons/car.svg";
 import peopleImage from "../../assets/images/icons/people.svg";
+import { addFav, deleteFav, getFav } from "../../utils/favourite-tools";
 
 const CarCard = (props) => {
   const [isActive, setIsActive] = useState(false);
 
+  useEffect(() => {
+    const isFavorite = getFav(props.id);
+    setIsActive(!!isFavorite);
+  }, [props.id]);
+
   const buttonHandler = () => {
+    if (isActive) {
+      deleteFav(props.id)
+    } else {
+      addFav(props.id);
+    }
     setIsActive(!isActive);
-    console.log(props.id)
   };
 
   return (
@@ -47,12 +57,12 @@ const CarCard = (props) => {
             <img src={gasImage} alt="gas" />
             <span>{props.fuel}L</span>
           </div>
-        
+
           <div>
             <img src={carImage} alt="car" />
             <span>{props.gear}</span>
           </div>
-        
+
           <div>
             <img src={peopleImage} alt="people" />
             <span>{props.people}</span>
