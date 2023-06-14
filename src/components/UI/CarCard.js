@@ -30,7 +30,7 @@ const CarCard = (props) => {
   };
 
   return (
-    <div>
+    <>
       {isVisible && (
         <div className={styles.card}>
           <button onClick={buttonHandler} className={styles.button}>
@@ -94,7 +94,7 @@ const CarCard = (props) => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
