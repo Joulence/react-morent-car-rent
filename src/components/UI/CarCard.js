@@ -24,7 +24,7 @@ const CarCard = (props) => {
         setIsVisible(false);
       }
     } else {
-      addFav(props.id);
+      addFav(props);
       setIsActive(true);
     }
   };
