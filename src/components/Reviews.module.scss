@@ -1,0 +1,71 @@
+.reviews {
+  margin-bottom: 32px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 24px;
+  &-title {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    h2 {
+      color: #1a202c;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+    }
+    span {
+      border-radius: 4px;
+      background: #3563e9;
+      padding: 6px 12px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    span {
+      color: #90a3bf;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &__left,
+    &__right {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  &-text {
+    color: #3d5278;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+  }
+
+  button {
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    display: flex;
+    color: #90a3bf;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+  }
+}
