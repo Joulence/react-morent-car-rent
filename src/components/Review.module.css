@@ -4,6 +4,9 @@
   letter-spacing: 0.02em;
   color: #3d5278;
   margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .details__info-reviews.block {
