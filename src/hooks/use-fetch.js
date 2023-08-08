@@ -60,7 +60,7 @@ const useFetch = (view, url) => {
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
-        setHttpError(error.message);
+        setHttpError("Ooops... Error happened during the fetch!");
       }
     };
 

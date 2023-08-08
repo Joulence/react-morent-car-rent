@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./CarCard.module.css";
 import gasImage from "../../assets/images/icons/gas.svg";
@@ -8,8 +8,9 @@ import { addFav, deleteFav, getFav } from "../../utils/favourite-tools";
 
 const CarCard = (props) => {
   const [isActive, setIsActive] = useState(false);
-
   const [isVisible, setIsVisible] = useState(true);
+
+  let favLength = useRef(0);
 
   useEffect(() => {
     const isFavorite = getFav(props.id);
@@ -27,7 +28,15 @@ const CarCard = (props) => {
       addFav(props);
       setIsActive(true);
     }
+    const storedFavorites = Object.keys(localStorage).filter((key) =>
+      key.startsWith("car")
+    );
+    favLength.current = storedFavorites.length;
   };
+
+  if (favLength.current < 1 && isVisible === false) {
+    return <p>No favorite cars found.</p>;
+  }
 
   return (
     <>

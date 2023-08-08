@@ -18,7 +18,7 @@ const FavouritesList = () => {
     setFavoriteCars(favorites);
   }, []);
 
-  if (favoriteCars.length === 0 || favoriteCars.every((car) => car === null)) {
+  if (favoriteCars.length === 0 || favoriteCars.every((car) => car == null)) {
     return <p>No favorite cars found.</p>;
   }
 
