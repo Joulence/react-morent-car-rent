@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/use-fetch";
 import CarDetail from "../components/CarDetail";
+import Reviews from "../components/Reviews";
 
 const DetailsPage = () => {
   const params = useParams();
@@ -42,6 +43,7 @@ const DetailsPage = () => {
         discount={discount}
         url={url}
       />
+      <Reviews />
     </div>
   );
 };
