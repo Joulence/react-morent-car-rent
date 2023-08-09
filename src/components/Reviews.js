@@ -75,7 +75,7 @@ const Reviews = () => {
                   <div className={styles["reviews-text"]}>{review.text}</div>
                 </li>
               ))
-            : reviews.slice(2, reviews.length).map((review) => (
+            : reviews.slice(0, reviews.length).map((review) => (
                 <li key={review.id}>
                   <div className={styles["reviews-info"]}>
                     <div className={styles["reviews-info__left"]}>
