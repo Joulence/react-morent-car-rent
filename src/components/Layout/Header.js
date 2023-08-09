@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import Logo from "../Logo";
-import notificationIcon from "../../assets/images/icons/notification.svg";
-import settingsIcon from "../../assets/images/icons/settings.svg";
+/* import notificationIcon from "../../assets/images/icons/notification.svg";
+import settingsIcon from "../../assets/images/icons/settings.svg"; */
 import favouritesIcon from "../../assets/images/icons/fav.svg";
 import SearchBar from "../SearchBar";
 
