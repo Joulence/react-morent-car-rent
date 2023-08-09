@@ -57,6 +57,10 @@
   margin-bottom: 64px;
 }
 
+.card-car img {
+  width: 100%;
+}
+
 .card-car div {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   width: 100%;
